@@ -27,15 +27,34 @@ def main():
     
     # split
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+    # Splits the data into training and test sets.
+    # 80% of the data goes to training, and 20% goes to testing.
+    # This is important to evaluate the model's performance on unseen data.
     
     # model
     model = LinearRegression()
+    # This creates an instance of the LinearRegression model.
+    # The model tries to find the best-fitting straight line through the training data
+    # by minimizing the error between the predicted and actual values (using the least squares method).
+    
     model.fit(x_train, y_train)
+    # This trains the model on the training data (x_train and y_train).
+    # It calculates the best slope and intercept (in the equation y = mx + b) to fit the data.
+    # After calling fit, the model has "learned" the relationship between x and y.
+
     predictions = model.predict(x_test)
+    # This uses the trained model to make predictions on the test data (x_test).
+    # It applies the learned equation (y = mx + b) to the test inputs and outputs the predicted values.
+
     
     # results
     print("predictions:", predictions)
+    # Prints the model’s predictions for the test set.
+    
     print("MSE:", mean_squared_error(y_test, predictions))
+    # Calculates and prints the Mean Squared Error between the predicted and actual test values.
+    # Lower MSE means better performance.
+    
     print("Actual:", y_test)
     print("Predicted:", predictions)
 
