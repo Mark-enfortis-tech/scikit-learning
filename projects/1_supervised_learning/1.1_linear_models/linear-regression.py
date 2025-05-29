@@ -30,6 +30,9 @@ def main():
     # Splits the data into training and test sets.
     # 80% of the data goes to training, and 20% goes to testing.
     # This is important to evaluate the model's performance on unseen data.
+    #sklearn.model_selection.train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None)
+    # test_size:    If float, should be between 0.0 and 1.0 and represent the proportion of the dataset to include in the test split. 
+    #               If int, represents the absolute number of test samples. If None, the value is set to the complement of the train size.
     
     # model
     model = LinearRegression()
