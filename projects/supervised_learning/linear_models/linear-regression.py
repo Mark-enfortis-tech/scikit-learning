@@ -1,3 +1,34 @@
+"""
+Linear regression is a statistical method used to model the relationship between one dependent variable yy and one or more independent variables xx.
+    The goal is to find the best-fitting straight line (in the simplest case with one variable) through a set of data points.
+    This line predicts yy based on xx.
+
+For a single variable, the model looks like:
+y=mx+b
+y=mx+b
+
+where:
+
+    mm is the slope of the line,
+
+    bb is the intercept (where the line crosses the y-axis).
+    
+    
+Least squares is a method to find the best-fitting line by minimizing the total error between the predicted values and the actual values.
+
+    The error for each data point is the difference between the actual yy and the predicted y^y^​ from the line.
+
+    We square these errors to avoid negative and positive errors canceling out.
+
+    Then, we sum all the squared errors for all data points.
+
+Mathematically, for data points (xi,yi)(xi​,yi​) where i=1,2,...,ni=1,2,...,n, we want to minimize:
+S=∑i=1n(yi−yi^)2=∑i=1n(yi−(mxi+b))2
+S=i=1∑n​(yi​−yi​^​)2=i=1∑n​(yi​−(mxi​+b))2
+    
+"""
+
+
 import numpy as np
 # NumPy is a library for numerical operations, especially useful for working with arrays and matrices.
 
