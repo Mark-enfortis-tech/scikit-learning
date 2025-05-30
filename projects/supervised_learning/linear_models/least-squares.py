@@ -22,3 +22,33 @@ Why is least squares used?
     It has nice mathematical properties, making it easy to solve analytically.
     
 """
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Step 1: Create sample data
+# Let's make x values from 0 to 10
+X = np.arange(0, 10, 1).reshape(-1, 1)  # reshape for sklearn (n_samples, n_features)
+# y values roughly follow y = 2x + 1 plus some noise
+y = 2 * X.flatten() + 1 + np.random.randn(10) * 1.5
+
+# Step 2: Fit the linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Step 3: Print slope and intercept
+print(f"Slope (m): {model.coef_[0]:.2f}")
+print(f"Intercept (b): {model.intercept_:.2f}")
+
+# Step 4: Predict values using the model
+y_pred = model.predict(X)
+
+# Plotting the data points and the fitted line
+plt.scatter(X, y, color='blue', label='Data points')
+plt.plot(X, y_pred, color='red', label='Fitted line (Least Squares)')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.legend()
+plt.title('Linear Regression using Least Squares (scikit-learn)')
+plt.show()
