@@ -30,6 +30,15 @@ from sklearn.linear_model import LinearRegression
 # Step 1: Create sample data
 # Let's make x values from 0 to 10
 X = np.arange(0, 10, 1).reshape(-1, 1)  # reshape for sklearn (n_samples, n_features)
+# Each value here is one sample (so 10 samples total).
+# Because sklearn expects a 2D array (samples × features), we reshape it to have 10 rows (samples) and 1 column (feature).
+# So, X.shape will be (10, 1), meaning 10 samples and 1 feature.
+# -1: Let NumPy figure this out automatically based on the number of elements.
+# 1: Make 1 column (i.e., 1 feature).
+
+print('X.shape', X.shape)
+print('X', X)
+
 # y values roughly follow y = 2x + 1 plus some noise
 y = 2 * X.flatten() + 1 + np.random.randn(10) * 1.5
 
