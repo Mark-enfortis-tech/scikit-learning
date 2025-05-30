@@ -28,6 +28,9 @@ That added term is the L2 penalty, which discourages large values in the model c
         In high-dimensional spaces (more features than samples), standard regression fits noise in the data.
 
         Ridge regression controls this by penalizing large coefficients, improving generalization.
+        
+        The complexity parameter controls the amount of shrinkage: the larger the value of, 
+        the greater the amount of shrinkage and thus the coefficients become more robust to collinearity.
 
     Improves Model Performance:
 
