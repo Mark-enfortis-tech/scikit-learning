@@ -1,6 +1,6 @@
 # ridge_regression_example.py
 """
-idge Regression is a type of linear regression that includes a regularization term to prevent overfitting 
+Ridge Regression is a type of linear regression that includes a regularization term to prevent overfitting 
 and handle multicollinearity (when predictor variables are highly correlated).
 
 Ridge regression modifies the standard linear regression by adding a penalty (shrinkage) term to the loss function. The model tries to minimize:
