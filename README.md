@@ -6,4 +6,7 @@ Each project corresponds to a section or sub-section of the guide, organized to 
 ---
 
 ## Repository Structure
+### Projects
+#### Fitting Predicting
+#### Supervised Learning
 
