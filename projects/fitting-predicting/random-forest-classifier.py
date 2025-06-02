@@ -51,8 +51,11 @@ A categorical label:
     Or multi-class (e.g., dog/cat/bird)
 
 """
+# this program follows the fit -> predict.
 
 # Initialize the classifier with a fixed random state for reproducibility
+# RandomForestClassifier does not implement transform(), because it is an estimator, not a transformer.
+
 clf = RandomForestClassifier(random_state=0)
 
 # Define training data (2 samples with 3 features each)
