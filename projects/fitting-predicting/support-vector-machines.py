@@ -12,6 +12,24 @@ In binary classification, SVM tries to find the hyperplane that:
 
 This margin maximization helps generalize better to unseen data.
 
+✅ When to Use SVM
+🔸 Good fit when:
+    Feature space is high-dimensional (like text or gene data)
+    You need strong generalization with few samples
+    You care about robust decision boundaries (clear margins)
+    You want a model that can be non-linear, but still interpretable
+
+🔸 Caution when:
+    You have very large datasets (training time grows with data)
+    You need probabilistic outputs (SVM does not do this natively — must use probability=True, which slows things down)
+    
+    Feature	    Summary
+    Goal	    Maximize margin between classes
+    Type	    Supervised, classification and regression
+    Key         concept	Decision boundary defined by support vectors
+    Strength	High accuracy in high-dimensional space
+    Weakness	Can be slow on large datasets, hard to tune for big tasks
+
 
 
 🛫 What Is a Hyperplane?
