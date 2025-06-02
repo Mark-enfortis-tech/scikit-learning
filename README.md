@@ -9,4 +9,6 @@ Each project corresponds to a section or sub-section of the guide, organized to 
 ### Projects
 #### Fitting Predicting
 #### Supervised Learning
+##### Linear Models
+
 
