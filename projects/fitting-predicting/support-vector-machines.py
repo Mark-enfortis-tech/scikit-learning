@@ -104,6 +104,37 @@ print(train_distribution)
 print('\nTest distribution:')
 print(test_distribution)
 
+"""
+Here's the output of the training dist
+Counter({
+    np.int64(1): 132,
+    np.int64(8): 131,
+    np.int64(2): 130,
+    np.int64(3): 129,
+    np.int64(6): 128,
+    np.int64(0): 125,
+    np.int64(7): 124,
+    np.int64(4): 121,
+    np.int64(9): 121,
+    np.int64(5): 116
+})
+
+and here's the test distribution:
+Counter({
+    np.int64(5): 66,
+    np.int64(4): 60,
+    np.int64(9): 59,
+    np.int64(7): 55,
+    np.int64(3): 54,
+    np.int64(6): 53,
+    np.int64(0): 53,
+    np.int64(1): 50,
+    np.int64(2): 47,
+    np.int64(8): 43
+})
+
+"""
+
 # # train an SVC
 # clf = SVC(kernel='linear') # tryp 'rbf' and 'poly' later for comparison 
 # clf.fit(X_train, y_train)
