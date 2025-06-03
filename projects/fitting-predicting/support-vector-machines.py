@@ -72,6 +72,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
 import numpy as np
+from collections import Counter
 
 
 # load the data
@@ -94,6 +95,14 @@ print('Training labels shape: ', np.shape(y_train))
 print('Test labels shape: ', np.shape(y_test))
 print('y_train: ', y_train)
 print('y_test: ', y_test)
+
+# lets determine information about the dataset using collections.Counter
+train_distribution = Counter(y_train)
+test_distribution = Counter(y_test)
+print('Training label distribution: ')
+print(train_distribution)
+print('\nTest distribution:')
+print(test_distribution)
 
 # # train an SVC
 # clf = SVC(kernel='linear') # tryp 'rbf' and 'poly' later for comparison 
