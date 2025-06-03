@@ -78,31 +78,53 @@ from collections import Counter
 # load the data
 digits = datasets.load_digits()
 X, y = digits.data, digits.target
+pixel_value = X[0][0]
+print("X[0][0] = ", pixel_value)
+
+pixel_value = X[0][2]
+print("X[0][2] = ", pixel_value)
+
+pixel_value = X[0][3]
+print("X[0][3] = ", pixel_value)
+
+pixel_value = X[0][4]
+print("X[0][4] = ", pixel_value)
+
+pixel_value = X[1][2]
+print("X[1][2] = ", pixel_value)
+
+pixel_value = X[1][3]
+print("X[1][3] = ", pixel_value)
+
+pixel_value = X[2][2]
+print("X[2][2] = ", pixel_value)
+
 
 # visualize the data 
-# plt.gray()
-# plt.matshow(digits.images[0])
-# plt.title(f"Label: {digits.target[0]}")
-# plt.show()
+
+plt.imshow(digits.images[0], cmap='gray', interpolation='none')
+plt.title(f"Label: {digits.target[0]}")
+plt.colorbar()
+plt.show()
 
 
 # # split the dataset
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-print('X_train:', X_train)
-print('X_test:', X_test)
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+# print('X_train:', X_train)
+# print('X_test:', X_test)
 
-print('Training labels shape: ', np.shape(y_train))
-print('Test labels shape: ', np.shape(y_test))
-print('y_train: ', y_train)
-print('y_test: ', y_test)
+# print('Training labels shape: ', np.shape(y_train))
+# print('Test labels shape: ', np.shape(y_test))
+# print('y_train: ', y_train)
+# print('y_test: ', y_test)
 
 # lets determine information about the dataset using collections.Counter
-train_distribution = Counter(y_train)
-test_distribution = Counter(y_test)
-print('Training label distribution: ')
-print(train_distribution)
-print('\nTest distribution:')
-print(test_distribution)
+# train_distribution = Counter(y_train)
+# test_distribution = Counter(y_test)
+# print('Training label distribution: ')
+# print(train_distribution)
+# print('\nTest distribution:')
+# print(test_distribution)
 
 """
 Here's the output of the training dist
