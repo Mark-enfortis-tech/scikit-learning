@@ -90,14 +90,14 @@ print("X[0][3] = ", pixel_value)
 pixel_value = X[0][4]
 print("X[0][4] = ", pixel_value)
 
-pixel_value = X[1][2]
-print("X[1][2] = ", pixel_value)
+pixel_value = X[0][10]
+print("X[0][10] = ", pixel_value)
 
-pixel_value = X[1][3]
-print("X[1][3] = ", pixel_value)
+pixel_value = X[0][11]
+print("X[0][11] = ", pixel_value)
 
-pixel_value = X[2][2]
-print("X[2][2] = ", pixel_value)
+pixel_value = X[0][18]
+print("X[0][18] = ", pixel_value)
 
 
 # visualize the data 
