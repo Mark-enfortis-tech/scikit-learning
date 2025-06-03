@@ -71,26 +71,36 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
+import numpy as np
 
+
+# load the data
 digits = datasets.load_digits()
 X, y = digits.data, digits.target
 
 # visualize the data 
-plt.gray()
-plt.matshow(digits.images[0])
-plt.title(f"Label: {digits.target[0]}")
-plt.show()
+# plt.gray()
+# plt.matshow(digits.images[0])
+# plt.title(f"Label: {digits.target[0]}")
+# plt.show()
 
 
-# split the dataset
+# # split the dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+print('X_train:', X_train)
+print('X_test:', X_test)
 
-# train an SVC
-clf = SVC(kernel='linear') # tryp 'rbf' and 'poly' later for comparison 
-clf.fit(X_train, y_train)
+print('Training labels shape: ', np.shape(y_train))
+print('Test labels shape: ', np.shape(y_test))
+print('y_train: ', y_train)
+print('y_test: ', y_test)
 
-# evaluate the model
-y_pred = clf.predict(X_test)
-print(classification_report(y_test, y_pred))
-print("Accuracy: ", accuracy_score(y_test, y_pred))
+# # train an SVC
+# clf = SVC(kernel='linear') # tryp 'rbf' and 'poly' later for comparison 
+# clf.fit(X_train, y_train)
+
+# # evaluate the model
+# y_pred = clf.predict(X_test)
+# print(classification_report(y_test, y_pred))
+# print("Accuracy: ", accuracy_score(y_test, y_pred))
 
