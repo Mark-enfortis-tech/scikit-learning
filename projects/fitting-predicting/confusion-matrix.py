@@ -11,7 +11,7 @@ from sklearn.svm import SVC
 
 # load the data
 digits = datasets.load_digits()
-X, y = digits.data, digits.targe
+X, y = digits.data, digits.target
 
 # split the dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
