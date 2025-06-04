@@ -58,6 +58,58 @@ That means:
     The model never falsely predicted a 0 when the actual digit was something else (like a 1–9). 
     Thats a perfect precision for class 0.
     
+🧠 How it works:
+
+The confusion matrix is a single 2D array, typically 10x10 for digit classification (0–9):
+
+    Each row corresponds to a true label
+
+    Each column corresponds to a predicted label
+
+From that one matrix, you can extract:
+✅ Precision for class i:
+
+Look down column i
+→ "Of all things predicted as class i, how many were correct?"
+✅ Recall for class i:
+
+Look across row i
+→ "Of all true class i items, how many were correctly predicted?"
+🔁 Summary:
+Metric	Direction	Question Asked	Pull From Confusion Matrix
+Precision	Columns	"How many of the predicted class X were right?"	Column X
+Recall	Rows	"How many actual class X were caught?"	Row X
+
+
+🔢 In the Confusion Matrix:
+	Predicted: 0	Predicted: 1	...	Predicted: 9
+True: 0	✅ True Positive	❌ False Negative		
+True: 1	❌ False Positive	✅ True Positive		
+...			...	
+🔍 Terminology Breakdown:
+
+    True Positive (TP):
+    Correct prediction — it’s class n, and the model predicted n.
+    → On the diagonal (e.g., cm[3][3])
+
+    False Positive (FP):
+    Model predicted n, but the true label was something else.
+    → In column n, but off the diagonal
+
+    False Negative (FN):
+    Actual label was n, but model predicted something else.
+    → In row n, but off the diagonal
+
+🚦 Think of it this way:
+
+    Columns = What the model predicted
+
+        Off-diagonal cells = false positives (model guessed wrong)
+
+    Rows = What the ground truth actually was
+
+        Off-diagonal cells = false negatives (model missed it)
+    
     
 '''
 
