@@ -198,6 +198,59 @@ y_pred = clf.predict(X_test)
 print(classification_report(y_test, y_pred))
 print("Accuracy: ", accuracy_score(y_test, y_pred))
 
+"""
+Info from the classification report
+✅ Precision
+    Of all the times the model predicted this class, how often was it right?
+
+    Precision=True Positives / (True Positives + False Positives)
+    False positive, claims to be in group but is not
+
+    High precision = low false positives.
+    For example, if digit 3 was predicted 50 times, and 48 were actually 3, precision is 0.96.
+    
+✅ Recall
+
+    Of all the actual instances of this class, how many did the model catch?
+
+    Recall=True Positives / (True Positives + False Negatives)
+    False negative, is in the group but was missed.
+
+    High recall = low false negatives.
+    If there were 60 true 3s and the model caught 54, recall = 0.90.
+    
+
+✅ F1-score
+
+    The harmonic mean of precision and recall.
+
+    F1=2⋅Precision⋅Recall/ (Precision + Recall)
+
+
+    F1 balances both precision and recall, useful if you want a single metric to optimize.
+
+    Especially useful when classes are imbalanced.
+    
+✅ Support
+
+    The number of actual instances of this class in the test set.
+
+    This is the ground truth count.
+
+    If support = 59 for digit 0, that means there are 59 real zeroes in y_test.
+    
+🧠 Why it matters
+
+    This report helps you see:
+
+    Which digits your model is best at predicting
+
+    Which ones it's confusing or missing
+
+    Whether it's biased toward more frequent classes (via support)
+
+"""
+
 # visualize the data 
 plt.imshow(digits.images[0], cmap='gray', interpolation='none')
 plt.title(f"Label: {digits.target[0]}")
