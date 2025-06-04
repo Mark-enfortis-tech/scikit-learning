@@ -36,4 +36,30 @@ plt.title('Confusion Matrix')
 plt.show()
 
 
+'''
+✅ Your Setup:
+
+    Horizontal axis (x-axis): Predicted labels (what the model guessed)
+
+    Vertical axis (y-axis): True labels (actual values from y_test)
+
+    Each cell at (row, col) tells us:
+    How many times a true digit row was predicted as digit col
+    
+🧩 So for (0, 0) = 53:
+
+That means:
+
+    The digit 0 was correctly predicted as 0 53 times.
+
+    This is a true positive for class 0.
+
+    Since the rest of column 0 is all zeros:
+    The model never falsely predicted a 0 when the actual digit was something else (like a 1–9). 
+    Thats a perfect precision for class 0.
+    
+    
+'''
+
+
 
