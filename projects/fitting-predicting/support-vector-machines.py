@@ -158,14 +158,45 @@ Counter({
 
 """
 
-# # train an SVC
-# clf = SVC(kernel='linear') # tryp 'rbf' and 'poly' later for comparison 
-# clf.fit(X_train, y_train)
+'''
+🔍 Key concepts
+1. Each sample is a point in high-dimensional space
 
-# # evaluate the model
-# y_pred = clf.predict(X_test)
-# print(classification_report(y_test, y_pred))
-# print("Accuracy: ", accuracy_score(y_test, y_pred))
+    X_train[n] is a 64-dimensional vector (from 8×8 pixels).
+
+    So you can think of each image as a point in 64D space.
+
+    SVC is trying to group similar points together (same digit) and separate different digits.
+
+2. Decision boundary (hyperplane)
+
+    For binary classification (e.g., is it a 3 or not?), SVC finds a hyperplane that separates the two classes.
+
+    This hyperplane is chosen to maximize the margin — the distance between the boundary and the closest points from either class.
+
+3. Support vectors
+
+    The points that lie closest to the boundary are called support vectors.
+
+    These are the "hardest" cases — the most informative training examples.
+
+    The hyperplane is defined based on these support vectors.
+
+4. Linear kernel
+
+    The kernel='linear' means we are trying to separate the classes using a straight line (or flat plane in high dimensions).
+
+    It's efficient and works well when the data is linearly separable (or almost).
+'''
+
+# # train an SVC
+clf = SVC(kernel='linear') # tryp 'rbf' and 'poly' later for comparison 
+clf.fit(X_train, y_train)
+
+# evaluate the model
+y_pred = clf.predict(X_test)
+print(classification_report(y_test, y_pred))
+print("Accuracy: ", accuracy_score(y_test, y_pred))
 
 # visualize the data 
 plt.imshow(digits.images[0], cmap='gray', interpolation='none')
