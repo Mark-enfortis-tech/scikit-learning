@@ -12,6 +12,12 @@ In binary classification, SVM tries to find the hyperplane that:
 
 This margin maximization helps generalize better to unseen data.
 
+💡 In SVM (particularly this example using 2D image data X[n]),  for each corresponding X[n], there is a scalar quantity y[n] that maps 1:1. In 
+this case y[n] is called a label but represents a known truth about the sample X[n]. The training process is where the model learns the mapping from
+X[n] (the image), to y[n] (the digit or value). Given this information (ie once trained), we can take new X inputs and generate y predictions that 
+we hope match the true y. This is the essence of supervised learning. 
+
+
 ✅ When to Use SVM
 🔸 Good fit when:
     Feature space is high-dimensional (like text or gene data)
@@ -78,45 +84,40 @@ from collections import Counter
 # load the data
 digits = datasets.load_digits()
 X, y = digits.data, digits.target
-pixel_value = X[0][0]
-print("X[0][0] = ", pixel_value)
+# pixel_value = X[0][0]
+# print("X[0][0] = ", pixel_value)
 
-pixel_value = X[0][2]
-print("X[0][2] = ", pixel_value)
+# pixel_value = X[0][2]
+# print("X[0][2] = ", pixel_value)
 
-pixel_value = X[0][3]
-print("X[0][3] = ", pixel_value)
+# pixel_value = X[0][3]
+# print("X[0][3] = ", pixel_value)
 
-pixel_value = X[0][4]
-print("X[0][4] = ", pixel_value)
+# pixel_value = X[0][4]
+# print("X[0][4] = ", pixel_value)
 
-pixel_value = X[0][10]
-print("X[0][10] = ", pixel_value)
+# pixel_value = X[0][10]
+# print("X[0][10] = ", pixel_value)
 
-pixel_value = X[0][11]
-print("X[0][11] = ", pixel_value)
+# pixel_value = X[0][11]
+# print("X[0][11] = ", pixel_value)
 
-pixel_value = X[0][18]
-print("X[0][18] = ", pixel_value)
-
-
-# visualize the data 
-
-plt.imshow(digits.images[0], cmap='gray', interpolation='none')
-plt.title(f"Label: {digits.target[0]}")
-plt.colorbar()
-plt.show()
+# pixel_value = X[0][18]
+# print("X[0][18] = ", pixel_value)
 
 
-# # split the dataset
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-# print('X_train:', X_train)
-# print('X_test:', X_test)
 
-# print('Training labels shape: ', np.shape(y_train))
-# print('Test labels shape: ', np.shape(y_test))
-# print('y_train: ', y_train)
-# print('y_test: ', y_test)
+
+
+# split the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+print('X_train:', X_train)
+print('X_test:', X_test)
+
+print('Training labels shape: ', np.shape(y_train))
+print('Test labels shape: ', np.shape(y_test))
+print('y_train: ', y_train)
+print('y_test: ', y_test)
 
 # lets determine information about the dataset using collections.Counter
 # train_distribution = Counter(y_train)
@@ -165,4 +166,10 @@ Counter({
 # y_pred = clf.predict(X_test)
 # print(classification_report(y_test, y_pred))
 # print("Accuracy: ", accuracy_score(y_test, y_pred))
+
+# visualize the data 
+plt.imshow(digits.images[0], cmap='gray', interpolation='none')
+plt.title(f"Label: {digits.target[0]}")
+plt.colorbar()
+plt.show()
 
